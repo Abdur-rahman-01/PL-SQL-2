@@ -1,0 +1,212 @@
+
+SQL> show user;
+USER is "CSE3059"
+SQL> create or replace procedure greetings
+  2  as
+  3  begin
+  4  dbms_output.put_line('Hello World!');
+  5  end;
+  6  /
+
+Procedure created.
+
+SQL> execute greetings;
+
+PL/SQL procedure successfully completed.
+
+SQL> set serveroutput on;
+SQL> execute greetings;
+Hello World!
+
+PL/SQL procedure successfully completed.
+
+SQL> edit d:\cse3059\hellloworld.sql
+
+SQL> set serveroutput on;
+SQL> @d:\cse3059\hellloworld.sql
+hello world
+
+PL/SQL procedure successfully completed.
+
+SQL> set serveroutput on;
+SQL> execute greetings;
+Hello World!
+
+PL/SQL procedure successfully completed.
+
+SQL> create or replace procedure pali(str in varchar,rev out varchar) is
+  2  c number;
+  3  begin
+  4  c:=length(str):
+  5  while c>0 loop
+  6  rev:=rev||sub str(str,c,1)
+  7  c:=c-1
+  8  end loop;
+  9  end;
+ 10  /
+
+Warning: Procedure created with compilation errors.
+
+SQL> create or replace procedure pali(str in varchar,rev out varchar) is
+  2    2  c number;
+  3    3  begin
+  4    4  c:=length(str):
+  5    5  while c>0 loop
+  6    6  rev:=rev||sub str(str,c,1)
+  7    7  c:=c-1
+  8    8  end loop;
+  9  /
+
+Warning: Procedure created with compilation errors.
+
+SQL> create or replace procedure pali(str in varchar,rev out varchar) is
+  2  c number
+  3  begin
+  4  c:=length(str);
+  5  while c>0 loop
+  6  rev:=rev||sub str(str,c,1)
+  7  c:=c-1
+  8  end loop
+  9  end;
+ 10  edit d:\cse3059\palindrome.sql
+ 11
+ 12
+ 13
+ 14
+ 15  /
+
+Warning: Procedure created with compilation errors.
+
+SQL> create or replace procedure pali(str in varchar,rev out varchar) is
+  2  c number;
+  3  begin
+  4  c:=length(str);
+  5  while c>0 loop;
+  6  rev:=rev||substr(str,c,1)
+  7  c:c-1
+  8  end loop
+  9  end;
+ 10  /
+
+Warning: Procedure created with compilation errors.
+
+SQL> c number;
+SP2-0023: String not found.
+SQL> create or replace procedure pali(str in varchar,rev out varchar) is
+  2  c number;
+  3  begin
+  4  c:=length(str);
+  5  while c>0 loop
+  6  rev:=rev||substr(str,c,1);
+  7  c:=c-1;
+  8  end loop;
+  9  end;
+ 10  /
+
+Procedure created.
+
+SQL> edit d:\cse3059\palindrome.sql
+
+SQL> set serveroutput on;
+SQL> @d:\cse3059\palindrome.sql
+Enter value for str: malayalam
+old   2: str varchar 2[20]='&str';
+new   2: str varchar 2[20]='malayalam';
+str varchar 2[20]='malayalam';
+            *
+ERROR at line 2:
+ORA-06550: line 2, column 13:
+PLS-00103: Encountered the symbol "2" when expecting one of the following:
+:= . ( @ % ; not null range default character
+
+
+SQL> edit d:\cse3059\palindrome.sql
+
+SQL> @d:\cse3059\palindrome.sql
+Enter value for str: malayalam
+old   2: str varchar 2[20]='&str';
+new   2: str varchar 2[20]='malayalam';
+str varchar 2[20]='malayalam';
+            *
+ERROR at line 2:
+ORA-06550: line 2, column 13:
+PLS-00103: Encountered the symbol "2" when expecting one of the following:
+:= . ( @ % ; not null range default character
+
+
+SQL> edit d:\cse3059\palindrome.sql
+
+SQL> @d:\cse3059\palindrome.sql
+Enter value for str: malayalam
+old   2: str varchar 2(20)='&str';
+new   2: str varchar 2(20)='malayalam';
+str varchar 2(20)='malayalam';
+            *
+ERROR at line 2:
+ORA-06550: line 2, column 13:
+PLS-00103: Encountered the symbol "2" when expecting one of the following:
+:= . ( @ % ; not null range default character
+The symbol ":= was inserted before "2" to continue.
+ORA-06550: line 3, column 13:
+PLS-00103: Encountered the symbol "2" when expecting one of the following:
+:= . ( @ % ; not null range default character
+The symbol "2" was ignored.
+
+
+SQL> edit d:\cse3059\palindrome.sql
+
+SQL> @d:\cse3059\palindrome.sql
+Enter value for str: malayalam
+old   2: str varchar2(20):='&str';
+new   2: str varchar2(20):='malayalam';
+given string ismalayalam
+reversed string ismalayalam
+palindrome
+
+PL/SQL procedure successfully completed.
+
+SQL> @d:\cse3059\program5.sql
+reversed number is:56789
+
+PL/SQL procedure successfully completed.
+
+SQL> create or replace function fct(n number)
+  2  return number is
+  3  a number:=n;
+  4  f number:=1;
+  5  i number;
+  6  begin
+  7  for i in 1..n
+  8  loop
+  9  f:=f*a;
+ 10  a:=a-1;
+ 11  end loop;
+ 12  return f;
+ 13  end;
+ 14  /
+
+Function created.
+
+SQL> @d:\cse3059\factorial.sql
+SP2-0310: unable to open file "d:\cse3059\factorial.sql"
+SQL> @d:\cse3059\factor.sql
+SP2-0310: unable to open file "d:\cse3059\factor.sql"
+SQL> edit d:\cse3059\factorial.sql
+
+SQL> @d:\cse3059\factorial.sql
+Enter value for n: 4
+old   6: n:=&n;
+new   6: n:=4;
+factorial is=24
+
+PL/SQL procedure successfully completed.
+
+SQL> @d:\cse3059\palindrome.sql
+Enter value for str: asad
+old   2: str varchar2(20):='&str';
+new   2: str varchar2(20):='asad';
+given string isasad
+reversed string isdasa
+not a palindrome
+
+PL/SQL procedure successfully completed.
