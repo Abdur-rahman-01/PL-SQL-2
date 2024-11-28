@@ -34,61 +34,6 @@ Hello World!
 
 PL/SQL procedure successfully completed.
 
-SQL> create or replace procedure pali(str in varchar,rev out varchar) is
-  2  c number;
-  3  begin
-  4  c:=length(str):
-  5  while c>0 loop
-  6  rev:=rev||sub str(str,c,1)
-  7  c:=c-1
-  8  end loop;
-  9  end;
- 10  /
-
-Warning: Procedure created with compilation errors.
-
-SQL> create or replace procedure pali(str in varchar,rev out varchar) is
-  2    2  c number;
-  3    3  begin
-  4    4  c:=length(str):
-  5    5  while c>0 loop
-  6    6  rev:=rev||sub str(str,c,1)
-  7    7  c:=c-1
-  8    8  end loop;
-  9  /
-
-Warning: Procedure created with compilation errors.
-
-SQL> create or replace procedure pali(str in varchar,rev out varchar) is
-  2  c number
-  3  begin
-  4  c:=length(str);
-  5  while c>0 loop
-  6  rev:=rev||sub str(str,c,1)
-  7  c:=c-1
-  8  end loop
-  9  end;
- 10  edit d:\cse3059\palindrome.sql
- 11
- 12
- 13
- 14
- 15  /
-
-Warning: Procedure created with compilation errors.
-
-SQL> create or replace procedure pali(str in varchar,rev out varchar) is
-  2  c number;
-  3  begin
-  4  c:=length(str);
-  5  while c>0 loop;
-  6  rev:=rev||substr(str,c,1)
-  7  c:c-1
-  8  end loop
-  9  end;
- 10  /
-
-Warning: Procedure created with compilation errors.
 
 SQL> c number;
 SP2-0023: String not found.
@@ -105,52 +50,6 @@ SQL> create or replace procedure pali(str in varchar,rev out varchar) is
 
 Procedure created.
 
-SQL> edit d:\cse3059\palindrome.sql
-
-SQL> set serveroutput on;
-SQL> @d:\cse3059\palindrome.sql
-Enter value for str: malayalam
-old   2: str varchar 2[20]='&str';
-new   2: str varchar 2[20]='malayalam';
-str varchar 2[20]='malayalam';
-            *
-ERROR at line 2:
-ORA-06550: line 2, column 13:
-PLS-00103: Encountered the symbol "2" when expecting one of the following:
-:= . ( @ % ; not null range default character
-
-
-SQL> edit d:\cse3059\palindrome.sql
-
-SQL> @d:\cse3059\palindrome.sql
-Enter value for str: malayalam
-old   2: str varchar 2[20]='&str';
-new   2: str varchar 2[20]='malayalam';
-str varchar 2[20]='malayalam';
-            *
-ERROR at line 2:
-ORA-06550: line 2, column 13:
-PLS-00103: Encountered the symbol "2" when expecting one of the following:
-:= . ( @ % ; not null range default character
-
-
-SQL> edit d:\cse3059\palindrome.sql
-
-SQL> @d:\cse3059\palindrome.sql
-Enter value for str: malayalam
-old   2: str varchar 2(20)='&str';
-new   2: str varchar 2(20)='malayalam';
-str varchar 2(20)='malayalam';
-            *
-ERROR at line 2:
-ORA-06550: line 2, column 13:
-PLS-00103: Encountered the symbol "2" when expecting one of the following:
-:= . ( @ % ; not null range default character
-The symbol ":= was inserted before "2" to continue.
-ORA-06550: line 3, column 13:
-PLS-00103: Encountered the symbol "2" when expecting one of the following:
-:= . ( @ % ; not null range default character
-The symbol "2" was ignored.
 
 
 SQL> edit d:\cse3059\palindrome.sql
